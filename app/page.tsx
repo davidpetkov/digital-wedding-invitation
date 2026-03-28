@@ -52,7 +52,7 @@ export default function WeddingPage() {
 
         <DetailsSection />
 
-        <div className="flex items-center justify-center bg-secondary py-8">
+        <div className="flex items-center justify-center bg-secondary/80 py-8">
           <FloralDivider />
         </div>
 
@@ -66,8 +66,7 @@ export default function WeddingPage() {
         <CountdownTimer />
 
 
-
-        <div className="flex items-center justify-center bg-background py-8">
+        <div className="flex items-center justify-center bg-secondary/30 py-8">
           <FloralDivider />
         </div>
 

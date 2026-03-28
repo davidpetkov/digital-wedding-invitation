@@ -1,6 +1,6 @@
 "use client"
 
-import { MapPin, Clock, Church, UtensilsCrossed } from "lucide-react"
+import { MapPin, Clock, Church, UtensilsCrossed, House } from "lucide-react"
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll"
 
 function ScheduleItem({
@@ -14,7 +14,7 @@ function ScheduleItem({
   title: string
   description: string
 }) {
-  const ref = useRevealOnScroll()
+  const ref = useRevealOnScroll<HTMLDivElement>()
 
   return (
     <div ref={ref} className="flex gap-5">
@@ -34,8 +34,8 @@ function ScheduleItem({
 }
 
 export function DetailsSection() {
-  const headerRef = useRevealOnScroll()
-  const mapFrameRef = useRevealOnScroll()
+  const headerRef = useRevealOnScroll<HTMLDivElement>()
+  const mapFrameRef = useRevealOnScroll<HTMLDivElement>()
 
   // Replace this URL with your specific Google Maps Embed link
   const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.8880430099107!2d21.37676061244372!3d41.98121345883065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135411553ca6560f%3A0x91616fd726f96d57!2sVilla%20Ina!5e0!3m2!1sen!2smk!4v1774379747848!5m2!1sen!2smk"
@@ -81,12 +81,12 @@ export function DetailsSection() {
           {/* Right: Schedule timeline */}
           <div className="flex flex-col">
             <ScheduleItem
-              icon={Church}
-              time="14:00"
-              title="Црква"
-              description="Венчавката ќе се одржи во Црквата Света Софија, Охрид. Ве молиме дојдете 15 минути порано."
+              icon={House}
+              time="20:00"
+              title="Вила Ина"
+              description="Скопје - Горно Нерези"
             />
-            <ScheduleItem
+            {/* <ScheduleItem
               icon={UtensilsCrossed}
               time="17:00"
               title="Ресторан"
@@ -97,7 +97,7 @@ export function DetailsSection() {
               time="20:00"
               title="Забава"
               description="Музика, танцување и прослава до доцна во ноќта."
-            />
+            /> */}
 
             {/* Action Button */}
             <div className="mt-4">

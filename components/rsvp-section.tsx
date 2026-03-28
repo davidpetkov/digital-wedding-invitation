@@ -32,7 +32,7 @@ export function RsvpSection() {
   }
 
   return (
-    <section className="bg-background px-4 py-20 md:py-28">
+    <section className="bg-secondary/30 px-4 py-20 md:py-28">
       <div className="mx-auto max-w-lg text-center">
         {/* Section header */}
         <div ref={headerRef}>

@@ -34,9 +34,9 @@ export function HeroSection() {
         <div className="my-6 h-px w-10 bg-white/30" />
 
         {/* 2. The Header (Names) */}
-        <h1 className="font-serif text-5xl font-light italic leading-tight tracking-wide md:text-7xl lg:text-8xl">
+        <h1 className="font-serif text-5xl font-light leading-tight tracking-wide md:text-7xl lg:text-8xl">
   {"Ана"}
-  <span className="mx-3 font-sans text-3xl font-light italic text-white/70 md:mx-4 md:text-5xl lg:text-6xl">
+  <span className="mx-3 font-sans text-3xl font-light text-white/70 md:mx-4 md:text-5xl lg:text-6xl">
     {"&"}
   </span>
   {"Кирил"}

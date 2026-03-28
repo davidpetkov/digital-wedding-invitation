@@ -6,7 +6,7 @@ const WeddingInvitation = () => {
   const specialDate = 7;
 
   return (
-    <div className="flex justify-center bg-secondary p-[60px_10px] font-serif box-border">
+    <div className="flex justify-center bg-secondary/80 p-[60px_10px] font-serif box-border">
       <div className="bg-card w-full max-w-[500px] rounded-xl p-[30px_15px_15px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center relative box-border h-fit">
         
         <div className="relative mt-[10px]">
