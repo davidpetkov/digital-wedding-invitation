@@ -8,10 +8,10 @@ export function HeroSection() {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="/images/hero_bg_mobile.png"
+            srcSet="/images/hero_bg_mobile.webp"
           />
           <img
-            src="/images/hero_bg.png"
+            src="/images/hero_bg.webp"
             alt="Свадбена декорација"
             className="h-full w-full object-cover object-top"
           />
@@ -22,7 +22,7 @@ export function HeroSection() {
 
       {/* CONTENT: All light text now perfectly legible */}
       <div className="relative z-10 flex flex-col items-center px-6 text-center text-white drop-shadow-sm">
-        
+
         {/* 1. The Body Text (Moved up, dark tint makes it clear) */}
         <p className="max-w-[280px] font-sans text-xs uppercase tracking-[0.3em] text-white/80 md:text-sm">
           {"Со полни срца и искрена радост,"}
@@ -35,22 +35,22 @@ export function HeroSection() {
 
         {/* 2. The Header (Names) */}
         <h1 className="font-serif text-5xl font-light leading-tight tracking-wide md:text-7xl lg:text-8xl">
-  {"Ана"}
-  <span className="mx-3 font-sans text-3xl font-light text-white/70 md:mx-4 md:text-5xl lg:text-6xl">
-    {"&"}
-  </span>
-  {"Кирил"}
-</h1>
+          {"Ана"}
+          <span className="mx-3 font-sans text-3xl font-light text-white/70 md:mx-4 md:text-5xl lg:text-6xl">
+            {"&"}
+          </span>
+          {"Кирил"}
+        </h1>
 
       </div>
 
       {/* FOOTER: Scroll Indicator (Tint makes white clear here too) */}
-      <div className="absolute bottom-8 z-10 flex flex-col items-center text-white/50">
+      <div className="absolute bottom-8 z-10 flex flex-col items-center text-white/80 font-semibold">
         <span className="mb-2 text-[10px] uppercase tracking-[0.4em]">
           {"Повлечи надолу"}
         </span>
         <div className="h-10 w-px bg-white/20">
-          <div className="h-1/2 w-full animate-pulse bg-white/40" />
+          <div className="h-1/2 w-full animate-pulse bg-white/80" />
         </div>
       </div>
     </section>

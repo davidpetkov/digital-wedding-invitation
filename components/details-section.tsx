@@ -8,11 +8,13 @@ function ScheduleItem({
   time,
   title,
   description,
+  descriptionSecond,
 }: {
   icon: typeof Church
   time: string
   title: string
   description: string
+  descriptionSecond: string
 }) {
   const ref = useRevealOnScroll<HTMLDivElement>()
 
@@ -28,6 +30,7 @@ function ScheduleItem({
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{time}</p>
         <h3 className="mt-1 font-serif text-xl text-foreground">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{descriptionSecond}</p>
       </div>
     </div>
   )
@@ -54,7 +57,18 @@ export function DetailsSection() {
 
         <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
           
-          {/* Left: Framed Google Map */}
+          {/* Left: Schedule timeline */}
+          <div>
+            <ScheduleItem
+              icon={House}
+              time=""
+              title="Вила Ина"
+              description="Скопје - Горно Нерези"
+              descriptionSecond="Прием 18:30-19:00"
+            />
+          </div>
+
+          {/* Right: Framed Google Map */}
           <div ref={mapFrameRef} className="relative">
             {/* The Outer "Invitation" Frame */}
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-primary/50 bg-card p-3 shadow-xl md:aspect-square">
@@ -76,28 +90,6 @@ export function DetailsSection() {
               <div className="absolute -top-2 -left-2 h-8 w-8 border-t border-l border-accent/40" />
               <div className="absolute -bottom-2 -right-2 h-8 w-8 border-b border-r border-accent/40" />
             </div>
-          </div>
-
-          {/* Right: Schedule timeline */}
-          <div className="flex flex-col">
-            <ScheduleItem
-              icon={House}
-              time="20:00"
-              title="Вила Ина"
-              description="Скопје - Горно Нерези"
-            />
-            {/* <ScheduleItem
-              icon={UtensilsCrossed}
-              time="17:00"
-              title="Ресторан"
-              description="Прославата продолжува во Ресторан Бела Роза, со поглед на Охридското Езеро."
-            />
-            <ScheduleItem
-              icon={Clock}
-              time="20:00"
-              title="Забава"
-              description="Музика, танцување и прослава до доцна во ноќта."
-            /> */}
 
             {/* Action Button */}
             <div className="mt-4">

@@ -1,18 +1,20 @@
 import React from 'react';
+import { useRevealOnScroll } from '@/hooks/use-reveal-on-scroll';
 
 const WeddingInvitation = () => {
-  const days = ['ПОН', 'ВТОР', 'СРЕД', 'ЧЕТ', 'ПЕТ', 'САБ', 'НЕТ'];
+  const ref = useRevealOnScroll<HTMLDivElement>();
+  const days = ['ПОН', 'ВТОР', 'СРЕД', 'ЧЕТ', 'ПЕТ', 'САБ', 'НЕД'];
   const totalDays = 30;
   const specialDate = 7;
 
   return (
-    <div className="flex justify-center bg-secondary/80 p-[60px_10px] font-serif box-border">
+    <div ref={ref} className="flex justify-center bg-secondary/80 p-[60px_10px] font-serif box-border">
       <div className="bg-card w-full max-w-[500px] rounded-xl p-[30px_15px_15px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] text-center relative box-border h-fit">
         
         <div className="relative mt-[10px]">
           
           {/* Title */}
-          <div className="text-right mb-[-10px] mr-[5px]">
+          <div className="text-right mb-[10px] mr-[5px]">
             <span className="font-serif italic text-accent text-[clamp(1.8rem,7vw,2.8rem)]">
               Јуни 2026
             </span>
