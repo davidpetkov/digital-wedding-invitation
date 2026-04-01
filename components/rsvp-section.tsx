@@ -2,7 +2,24 @@
 
 import { useState } from "react"
 import { Heart } from "lucide-react"
+import confetti from "canvas-confetti"
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll"
+
+const fireFlowerPetals = () => {
+  const petal = confetti.shapeFromPath({
+    path: "M33 7s-1.33-4.66-4-6c-3-1.5-6-1-8 2-3 4-2 12-2 12s0 5 4 7c3 1.5 8 0 10-2 3-3 0-13 0-13z",
+  })
+
+  confetti({
+    shapes: [petal],
+    particleCount: 100,
+    spread: 80,
+    origin: { y: 0.6 },
+    colors: ["#ffccd5", "#ffb3c1", "#fae1dd"],
+    scalar: 2,
+    drift: 0.5,
+  })
+}
 
 export function RsvpSection() {
   const headerRef = useRevealOnScroll<HTMLDivElement>()
@@ -27,8 +44,15 @@ export function RsvpSection() {
 
     setLoading(false)
 
-    if (res.ok) alert("Пријавата е успешно испратена!")
-    else alert("Настана грешка при испраќање на пријавата.")
+    if (res.ok) {
+      if (data.attendance === "yes") {
+        fireFlowerPetals()
+      } else if (data.attendance === "no") {
+        alert("Жал ни е што нема да присуствувате, но Ви благодариме на одговорот! 💕")
+      }
+    } else {
+      alert("Настана грешка при испраќање на пријавата.")
+    }
   }
 
   return (
